@@ -251,3 +251,38 @@
 // console.log(generateDecimalNumberFromWholeAndFractionalDigits([1, 2], [3, 4]));
 
 //*************************************************************************************************
+
+// Check if a Number is a Palindrome
+
+// function isPalindrome(input) {
+//   const value = input.toString().split("");
+
+//   let result = 0;
+//   for (let i = 0; i < value.length; i++) {
+//     result += Number(value[i]) * Math.pow(10, i);
+//   }
+
+//   return input === result;
+// }
+
+// console.log(isPalindrome(11211));
+
+function isPalindrome(num) {
+  let originalNumber = num;
+  const digit = [];
+
+  while (originalNumber > 0) {
+    const remainder = originalNumber % 10;
+    digit.push(remainder);
+    originalNumber = Math.floor(originalNumber / 10);
+  }
+
+  let result = 0;
+  for (let i = 0; i < digit.length; i++) {
+    result += digit[i] * Math.pow(10, digit.length - i - 1);
+  }
+
+  return num === result;
+}
+
+console.log(isPalindrome(112211));
