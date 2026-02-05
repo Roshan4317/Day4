@@ -267,22 +267,45 @@
 
 // console.log(isPalindrome(11211));
 
-function isPalindrome(num) {
-  let originalNumber = num;
+// function isPalindrome(num) {
+//   let originalNumber = num;
+//   const digit = [];
+
+//   while (originalNumber > 0) {
+//     const remainder = originalNumber % 10;
+//     digit.push(remainder);
+//     originalNumber = Math.floor(originalNumber / 10);
+//   }
+
+//   let result = 0;
+//   for (let i = 0; i < digit.length; i++) {
+//     result += digit[i] * Math.pow(10, digit.length - i - 1);
+//   }
+
+//   return num === result;
+// }
+
+// console.log(isPalindrome(112211));
+
+//*************************************************************************************************
+
+// Check if a Number is a ArmStrong Number
+
+function isArmStrong(num) {
+  const originalNumber = num;
   const digit = [];
 
-  while (originalNumber > 0) {
-    const remainder = originalNumber % 10;
-    digit.push(remainder);
-    originalNumber = Math.floor(originalNumber / 10);
+  while (num > 0) {
+    digit.push(num % 10);
+    num = Math.floor(num / 10);
   }
 
   let result = 0;
   for (let i = 0; i < digit.length; i++) {
-    result += digit[i] * Math.pow(10, digit.length - i - 1);
+    result += digit[i] ** digit.length;
   }
 
-  return num === result;
+  return originalNumber === result;
 }
 
-console.log(isPalindrome(112211));
+console.log(isArmStrong(407));
