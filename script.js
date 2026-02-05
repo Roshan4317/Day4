@@ -164,3 +164,29 @@
 // console.log(removeDecimalPoint(12.34));
 
 //*************************************************************************************************
+
+// Separate Whole and Fraction Part of the Number
+
+// function separator(value) {
+//   let wholeNumber;
+//   let fractionalPart;
+
+//   const partA = Math.trunc(value);
+//   wholeNumber = partA;
+
+//   const partB = value - partA;
+//   fractionalPart = partB;
+
+//   return `Whole ${partA} and Fraction ${partB}`;
+// }
+
+// console.log(separator(5.75));
+
+function separator(value) {
+  const fractionalPart = Number((value % 1).toFixed(10));
+  const wholeNumber = value - fractionalPart;
+
+  return `Whole ${wholeNumber} and Fraction ${fractionalPart}`;
+}
+
+console.log(separator(5.3));
