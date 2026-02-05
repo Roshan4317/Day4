@@ -349,20 +349,75 @@
 
 //Find the Average of the digits
 
-function findTheAverageOfDigits(num) {
-  const digits = [];
+// function findTheAverageOfDigits(num) {
+//   const digits = [];
+
+//   while (num > 0) {
+//     digits.push(num % 10);
+//     num = Math.floor(num / 10);
+//   }
+
+//   let result = 0;
+//   for (let i = 0; i < digits.length; i++) {
+//     result += digits[i];
+//   }
+
+//   return result / digits.length;
+// }
+
+// console.log(findTheAverageOfDigits(4567));
+
+//*************************************************************************************************
+
+// Find the largest and smallest digit in a number
+
+// function largestAndSmallest(num) {
+//   const digits = [];
+
+//   while (num > 0) {
+//     digits.push(num % 10);
+//     num = Math.floor(num / 10);
+//   }
+
+//   let largest = 0;
+//   let smallest = 9;
+
+//   for (let i = 0; i < digits.length; i++) {
+//     if (digits[i] >= largest) {
+//       largest = digits[i];
+//     }
+//   }
+
+//   for (let i = 0; i < digits.length; i++) {
+//     if (digits[i] <= smallest) {
+//       smallest = digits[i];
+//     }
+//   }
+
+//   return { largest, smallest };
+// }
+
+// console.log(largestAndSmallest(35782679)
+// );
+
+function largestAndSmallest(num) {
+  let largest = 0;
+  let smallest = 9;
+
+  if (num === 0) {
+    return "Enter a number above 0";
+  }
 
   while (num > 0) {
-    digits.push(num % 10);
+    let digit = num % 10;
+    if (digit > largest) largest = digit;
+    if (digit < smallest) smallest = digit;
     num = Math.floor(num / 10);
   }
 
-  let result = 0;
-  for (let i = 0; i < digits.length; i++) {
-    result += digits[i];
-  }
-
-  return result / digits.length;
+  return { largest, smallest };
 }
 
-console.log(findTheAverageOfDigits(4567));
+console.log(largestAndSmallest(357821067));
+
+//*************************************************************************************************
