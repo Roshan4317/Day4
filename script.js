@@ -182,11 +182,72 @@
 
 // console.log(separator(5.75));
 
-function separator(value) {
-  const fractionalPart = Number((value % 1).toFixed(10));
-  const wholeNumber = value - fractionalPart;
+// function separator(value) {
+//   const fractionalPart = Number((value % 1).toFixed(10));
+//   const wholeNumber = value - fractionalPart;
 
-  return `Whole ${wholeNumber} and Fraction ${fractionalPart}`;
-}
+//   return `Whole ${wholeNumber} and Fraction ${fractionalPart}`;
+// }
 
-console.log(separator(5.3));
+// console.log(separator(5.3));
+
+//*************************************************************************************************
+
+// Generate a decimal number from whole and fractional digits
+
+// const Whole = [1, 2];
+// const Fraction = [3, 4];
+// // Output = 12.34
+
+// function decimalNumber(whole, fractional) {
+//   const WH = whole.reduce((acc, el, index) => {
+//     return (acc += el * Math.pow(10, index));
+//   }, 0);
+
+//   const reversedWH = Number(String(WH).split("").reverse().join(""));
+
+//   const FR = fractional.reduce((acc, el, index) => {
+//     return (acc += el * Math.pow(10, index));
+//   }, 0);
+
+//   const reversedFR = Number(String(FR).split("").reverse().join(""));
+
+//   return Number(`${reversedWH}.${reversedFR}`);
+// }
+
+// console.log(decimalNumber(Whole, Fraction));
+
+// function decimalNumberGenerator(whole, fraction) {
+//   let wholeNumber = 0;
+//   let fractionNumber = 0;
+
+//   for (let i = 0; i < whole.length; i++) {
+//     wholeNumber += whole[i] * Math.pow(10, whole.length - i - 1);
+//   }
+
+//   for (let i = 0; i < fraction.length; i++) {
+//     fractionNumber += fraction[i] * Math.pow(10, -(i + 1));
+//   }
+
+//   return wholeNumber + fractionNumber;
+// }
+
+// console.log(decimalNumberGenerator([1, 2, 5], [3, 4]));
+
+// function generateDecimalNumberFromWholeAndFractionalDigits(whole, fraction) {
+//   const wholeNumber = whole.reduce((acc, element, index) => {
+//     return (acc += element * Math.pow(10, whole.length - index - 1));
+//   }, 0);
+
+//   console.log(wholeNumber);
+
+//   const fractionNumber = fraction.reduce((acc, element, index) => {
+//     return (acc += element * Math.pow(10, -(index + 1)));
+//   }, 0);
+
+//   console.log(fractionNumber);
+// }
+
+// console.log(generateDecimalNumberFromWholeAndFractionalDigits([1, 2], [3, 4]));
+
+//*************************************************************************************************
