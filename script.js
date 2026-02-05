@@ -328,19 +328,41 @@
 
 // console.log(findTheSumOfNumbers(987));
 
-function findTheSumOfNumbers(num) {
+// function findTheSumOfNumbers(num) {
+//   const digits = [];
+//   while (num > 0) {
+//     digits.push(num % 10);
+//     num = Math.floor(num / 10);
+//   }
+//   let result = 0;
+
+//   for (let i = 0; i < digits.length; i++) {
+//     result += digits[i];
+//   }
+
+//   return result;
+// }
+
+// console.log(findTheSumOfNumbers(987));
+
+//*************************************************************************************************
+
+//Find the Average of the digits
+
+function findTheAverageOfDigits(num) {
   const digits = [];
+
   while (num > 0) {
     digits.push(num % 10);
     num = Math.floor(num / 10);
   }
-  let result = 0;
 
+  let result = 0;
   for (let i = 0; i < digits.length; i++) {
     result += digits[i];
   }
 
-  return result;
+  return result / digits.length;
 }
 
-console.log(findTheSumOfNumbers(987));
+console.log(findTheAverageOfDigits(4567));
