@@ -291,21 +291,56 @@
 
 // Check if a Number is a ArmStrong Number
 
-function isArmStrong(num) {
-  const originalNumber = num;
-  const digit = [];
+// function isArmStrong(num) {
+//   const originalNumber = num;
+//   const digit = [];
 
+//   while (num > 0) {
+//     digit.push(num % 10);
+//     num = Math.floor(num / 10);
+//   }
+
+//   let result = 0;
+//   for (let i = 0; i < digit.length; i++) {
+//     result += digit[i] ** digit.length;
+//   }
+
+//   return originalNumber === result;
+// }
+
+// console.log(isArmStrong(407));
+
+//*************************************************************************************************
+
+// HomeWork
+
+// Find the sum of the Numbers
+
+// function findTheSumOfNumbers(num) {
+//   const digits = [];
+//   while (num > 0) {
+//     digits.push(num % 10);
+//     num = Math.floor(num / 10);
+//   }
+//   const result = digits.reduce((acc, curr, index) => acc + curr);
+//   return result;
+// }
+
+// console.log(findTheSumOfNumbers(987));
+
+function findTheSumOfNumbers(num) {
+  const digits = [];
   while (num > 0) {
-    digit.push(num % 10);
+    digits.push(num % 10);
     num = Math.floor(num / 10);
   }
-
   let result = 0;
-  for (let i = 0; i < digit.length; i++) {
-    result += digit[i] ** digit.length;
+
+  for (let i = 0; i < digits.length; i++) {
+    result += digits[i];
   }
 
-  return originalNumber === result;
+  return result;
 }
 
-console.log(isArmStrong(407));
+console.log(findTheSumOfNumbers(987));
