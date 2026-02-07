@@ -400,24 +400,54 @@
 // console.log(largestAndSmallest(35782679)
 // );
 
-function largestAndSmallest(num) {
-  let largest = 0;
-  let smallest = 9;
+// function largestAndSmallest(num) {
+//   let largest = 0;
+//   let smallest = 9;
 
-  if (num === 0) {
-    return "Enter a number above 0";
-  }
+//   if (num === 0) {
+//     return "Enter a number above 0";
+//   }
+
+//   while (num > 0) {
+//     let digit = num % 10;
+//     if (digit > largest) largest = digit;
+//     if (digit < smallest) smallest = digit;
+//     num = Math.floor(num / 10);
+//   }
+
+//   return { largest, smallest };
+// }
+
+// console.log(largestAndSmallest(357821067));
+
+//*************************************************************************************************
+
+// Check if a number is a Strong Number
+
+function isStrongNumber(num) {
+  let digit = [];
+  let originalNumber = num;
 
   while (num > 0) {
-    let digit = num % 10;
-    if (digit > largest) largest = digit;
-    if (digit < smallest) smallest = digit;
+    digit.push(num % 10);
     num = Math.floor(num / 10);
   }
 
-  return { largest, smallest };
+  let result = 0;
+
+  for (let i = 0; i < digit.length; i++) {
+    let innerValue = 1;
+
+    // 541
+
+    for (let j = 1; j <= digit[i]; j++) {
+      innerValue = innerValue * j;
+    }
+
+    result += innerValue;
+  }
+
+  return result === originalNumber;
 }
 
-console.log(largestAndSmallest(357821067));
-
-//*************************************************************************************************
+console.log(isStrongNumber(3));
