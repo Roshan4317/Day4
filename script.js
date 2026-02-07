@@ -424,30 +424,54 @@
 
 // Check if a number is a Strong Number
 
-function isStrongNumber(num) {
-  let digit = [];
-  let originalNumber = num;
+// function isStrongNumber(num) {
+//   let digit = [];
+//   let originalNumber = num;
+
+//   while (num > 0) {
+//     digit.push(num % 10);
+//     num = Math.floor(num / 10);
+//   }
+
+//   let result = 0;
+
+//   for (let i = 0; i < digit.length; i++) {
+//     let innerValue = 1;
+
+//     // 541
+
+//     for (let j = 1; j <= digit[i]; j++) {
+//       innerValue = innerValue * j;
+//     }
+
+//     result += innerValue;
+//   }
+
+//   return result === originalNumber;
+// }
+
+// console.log(isStrongNumber(3));
+
+//*************************************************************************************************
+
+// Check if number is autoMorphic
+
+function isAutoMorphic(num) {
+  let squareValue = num ** 2;
 
   while (num > 0) {
-    digit.push(num % 10);
-    num = Math.floor(num / 10);
-  }
+    let lastDigitOfNum = num % 10;
+    let lastDigitOfSquareValue = squareValue % 10;
 
-  let result = 0;
-
-  for (let i = 0; i < digit.length; i++) {
-    let innerValue = 1;
-
-    // 541
-
-    for (let j = 1; j <= digit[i]; j++) {
-      innerValue = innerValue * j;
+    if (lastDigitOfNum != lastDigitOfSquareValue) {
+      return false;
     }
 
-    result += innerValue;
+    num = Math.floor(num / 10);
+    squareValue = Math.floor(squareValue / 10);
   }
 
-  return result === originalNumber;
+  return true;
 }
 
-console.log(isStrongNumber(3));
+console.log(isAutoMorphic(25));
